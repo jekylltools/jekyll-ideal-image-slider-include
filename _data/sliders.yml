@@ -1,0 +1,12 @@
+- selector: slider1
+  images:
+    - src: /img/1.jpg
+      alt: Minimum required attributes
+    - src: /img/2.jpg
+      alt: A second image
+    - src: /img/3.jpg
+      title: Link example
+      alt: Links work too
+      href: http://example.com
+  settings: 
+    - height: 400
