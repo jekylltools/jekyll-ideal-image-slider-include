@@ -1,4 +1,5 @@
 - selector: slider1
+  captions: true
   images:
     - src: /img/1.jpg
       alt: Minimum required attributes
@@ -9,4 +10,36 @@
       alt: Links work too
       href: http://example.com
   settings: 
-    - height: 400
+    height: 400
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration: 
+    effect: "'fade'"
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:
+
+- selector: slider2
+  captions: false
+  images:
+    - src: /img/1.jpg
+      alt: Same first image, different text
+    - src: /img/2.jpg
+      alt: A second image
+    - src: /img/3.jpg
+      title: Link example
+      alt: Links work too
+      href: http://example.com
+  settings: 
+    height: "'auto'"
+    initialHeight:
+    maxHeight:
+    interval:
+    transitionDuration: 
+    effect:
+    disableNav:
+    keyboardNav:
+    previousNavSelector:
+    nextNavSelector:

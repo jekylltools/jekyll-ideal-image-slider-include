@@ -15,10 +15,12 @@
 
     {% include footer.html %}
 
-    <script src="{{ "/assets/js/iis/ideal-image-slider.min.js" | relative_url }}"></script>
-    <script src="{{ "/assets/js/iis/iis-captions.js" | relative_url }}"></script>
-    
-    {% include slider_load.html %}
+    {% if page.image_sliders %}
+      <script src="{{ "/assets/js/iis/ideal-image-slider.min.js" | relative_url }}"></script>
+      <script src="{{ "/assets/js/iis/iis-captions.js" | relative_url }}"></script>
+      
+      {% include slider_create.html %}
+    {% endif %}
 
   </body>
 
