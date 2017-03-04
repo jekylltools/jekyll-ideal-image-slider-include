@@ -1,0 +1,47 @@
+{% if page.image_sliders %}
+  <script src="{{ "/assets/js/iis/ideal-image-slider.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/iis/iis-captions.js" | relative_url }}"></script>
+  <script>
+  {% for selector in page.image_sliders %}
+    {% assign slider = site.data.sliders | where:"selector",selector | first %}
+    {% assign settings = slider.settings %}
+    var slider = new IdealImageSlider.Slider({
+      selector: '#{{ slider.selector }}',
+      {% if settings.height %}
+      height: {{ settings.height }},
+      {% endif %}
+      {% if settings.initialHeight %}
+      initialHeight: {{ settings.initialHeight }},
+      {% endif %}
+      {% if settings.maxHeight %}
+      maxHeight: {{ settings.maxHeight }},
+      {% endif %}
+      {% if settings.interval %}
+      interval: {{ settings.interval }},
+      {% endif %}
+      {% if settings.transitionDuration %}
+      transitionDuration: {{ settings.transitionDuration }},
+      {% endif %}
+      {% if settings.effect %}
+      effect: {{ settings.effect }},
+      {% endif %}
+      {% if settings.disableNav %}
+      disableNav: {{ settings.disableNav }},
+      {% endif %}
+      {% if settings.keyboardNav %}
+      keyboardNav: {{ settings.keyboardNav }},
+      {% endif %}
+      {% if settings.previousNavSelector %}
+      previousNavSelector: {{ settings.previousNavSelector }},
+      {% endif %}
+      {% if settings.nextNavSelector %}
+      nextNavSelector: {{ settings.nextNavSelector }},
+      {% endif %}
+    });
+    {% if slider.captions %}
+    slider.addCaptions();
+    {% endif %}
+    slider.start();
+  {% endfor %}
+  </script>
+{% endif %}

@@ -9,12 +9,12 @@
       title: Link example
       alt: Links work too
       href: http://example.com
-  settings: 
+  settings:
     height: 400
     initialHeight:
     maxHeight:
     interval:
-    transitionDuration: 
+    transitionDuration:
     effect: "'fade'"
     disableNav:
     keyboardNav:
@@ -32,12 +32,12 @@
       title: Link example
       alt: Links work too
       href: http://example.com
-  settings: 
+  settings:
     height: "'auto'"
     initialHeight:
     maxHeight:
     interval:
-    transitionDuration: 
+    transitionDuration:
     effect:
     disableNav:
     keyboardNav:
