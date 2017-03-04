@@ -1,6 +1,8 @@
-<div id="slider1">
-  <img src="{{ "/img/1.jpg" | relative_url }}" alt="Minimum required attributes">
-  <img data-src="{{ "/img/2.jpg" | relative_url }}" src="" alt="Use data-src for on-demand loading">
-  <img data-src="{{ "/img/3.jpg" | relative_url }}" data-src-2x="img/3@2x.jpg" src="" alt="Use data-src-2x for HiDPI devices">
-  <a href="http://example.com"><img data-src="{{ "/img/4.jpg" | relative_url }}" src="" alt="Links work too"></a>
-</div>
+{% if include.selector and include.selector != empty %}
+  {% assign slider = site.data.sliders | where:"selector",include.selector | first %}
+  <div id="{{ slider.selector }}">
+    {% for image in slider.images %}
+      {% if image.href %}<a href="{{ image.href }}">{% endif %}<img data-src="{{ image.data-src | relative_url }}" data-src-2x="{{ image.data-src-2x | relative_url }}" src="{{ image.src | relative_url }}" title="{{ image.title }}" alt="{{ image.alt }}">{% if image.href %}</a>{% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

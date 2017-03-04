@@ -1,4 +1,4 @@
-{% if page.image_sliders %}
+{% if page.image_sliders and page.image_sliders != empty %}
   <script src="{{ "/assets/js/iis/ideal-image-slider.min.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/iis/iis-captions.js" | relative_url }}"></script>
   <script>
@@ -38,7 +38,7 @@
       nextNavSelector: {{ settings.nextNavSelector }},
       {% endif %}
     });
-    {% if slider.captions %}
+    {% if slider.captions == true %}
     slider.addCaptions();
     {% endif %}
     slider.start();

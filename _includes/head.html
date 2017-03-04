@@ -10,8 +10,10 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
 
-  {% if page.image_sliders %}
+  {% if page.image_sliders and page.image_sliders != empty %}
   <link rel="stylesheet" href="{{ "/assets/css/iis/ideal-image-slider.css" | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/css/iis/themes/default.css" | relative_url }}">
+  <!-- don't copy the following line, applies only to jekyll minima theme -->
+  <style type="text/css">.ideal-image-slider{margin-bottom:15px}</style>
   {% endif %}
 </head>

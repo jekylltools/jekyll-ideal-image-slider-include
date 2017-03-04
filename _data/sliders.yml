@@ -3,10 +3,12 @@
   images:
     - src: /img/1.jpg
       alt: Minimum required attributes
-    - src: /img/2.jpg
-      alt: A second image
-    - src: /img/3.jpg
-      title: Link example
+    - data-src: /img/2.jpg
+      alt: Use data-src for on-demand loading
+    - data-src: /img/3.jpg
+      data-src-2x: /img/3@2x.jpg
+      alt: Use data-src-2x for HiDPI devices
+    - src: /img/4.jpg
       alt: Links work too
       href: http://example.com
   settings:
@@ -15,30 +17,33 @@
     maxHeight:
     interval:
     transitionDuration:
-    effect: "'fade'"
+    effect:
     disableNav:
     keyboardNav:
     previousNavSelector:
     nextNavSelector:
 
 - selector: slider2
-  captions: false
+  captions: true
   images:
     - src: /img/1.jpg
-      alt: Same first image, different text
-    - src: /img/2.jpg
-      alt: A second image
-    - src: /img/3.jpg
-      title: Link example
-      alt: Links work too
-      href: http://example.com
+      title: Balloons!
+      alt: This slider has caption titles
+    - data-src: /img/2.jpg
+      title: This slider uses the fade effect
+      alt: Instead of the default slide effect
+    - data-src: /img/3.jpg
+      data-src-2x: /img/3@2x.jpg
+    - src: /img/4.jpg
+      title: Last image had no caption!
+      alt: Also, this image has no link
   settings:
     height: "'auto'"
     initialHeight:
     maxHeight:
     interval:
     transitionDuration:
-    effect:
+    effect: "'fade'"
     disableNav:
     keyboardNav:
     previousNavSelector:
