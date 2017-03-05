@@ -44,9 +44,8 @@
 - selector: slider3
   images:
     - src: /img/1.jpg
-    - data-src: /img/2.jpg
-    - data-src: /img/3.jpg
-      data-src-2x: /img/3@2x.jpg
+    - src: /img/2.jpg
+    - src: /img/3.jpg
     - src: /img/4.jpg
   settings:
     height: "'auto'"

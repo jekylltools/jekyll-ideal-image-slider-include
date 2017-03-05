@@ -26,6 +26,6 @@ same images, different settings.
 
 ## slider 3
 
-same images, no captions, no navigation
+same images, minimal settings, no captions, no navigation
 
 {% include slider.html selector="slider3" %}
