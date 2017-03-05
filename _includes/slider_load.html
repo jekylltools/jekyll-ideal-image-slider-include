@@ -1,6 +1,7 @@
-{% if page.image_sliders and page.image_sliders != empty %}
-  <script src="{{ "/assets/js/iis/ideal-image-slider.min.js" | relative_url }}"></script>
-  <script src="{{ "/assets/js/iis/iis-captions.js" | relative_url }}"></script>
+{% include slider_check.html %}
+{% if iis_slider_active == true %}
+  <script src="{{ "/assets/js/slider/ideal-image-slider.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/slider/iis-captions.js" | relative_url }}"></script>
   <script>
   {% for selector in page.image_sliders %}
     {% assign slider = site.data.sliders | where:"selector",selector | first %}
