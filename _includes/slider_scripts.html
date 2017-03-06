@@ -1,12 +1,18 @@
 <!-- Jekyll Ideal Image Slider Include -->
 <!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
-<!-- v1.0 -->
-{% include slider_check.html %}
-{% if iis_slider_active == true %}
+<!-- v1.1 -->
+{% assign iis_slider_array = "" | split: "" %}
+{% for slider in page.image_sliders %}
+  {% assign iis_slider_array = iis_slider_array | push: slider | uniq %}
+{% endfor %}
+{% for slider in layout.image_sliders %}
+  {% assign iis_slider_array = iis_slider_array | push: slider | uniq %}
+{% endfor %}
+{% if iis_slider_array %}
   <script src="{{ "/assets/js/slider/ideal-image-slider.min.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/slider/iis-captions.js" | relative_url }}"></script>
   <script>
-  {% for selector in page.image_sliders %}
+  {% for selector in iis_slider_array %}
     {% assign slider = site.data.sliders | where:"selector",selector | first %}
     {% assign settings = slider.settings %}
     var slider = new IdealImageSlider.Slider({

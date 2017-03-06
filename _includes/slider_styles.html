@@ -1,8 +1,15 @@
 <!-- Jekyll Ideal Image Slider Include -->
 <!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
-<!-- v1.0 -->
-{% include slider_check.html %}
+<!-- v1.1 -->
+{% if page.image_sliders and page.image_sliders != empty %}
+  {% assign iis_slider_active = true %}
+{% endif %}
+{% if layout.image_sliders and layout.image_sliders != empty %}
+  {% assign iis_slider_active = true %}
+{% endif %}
 {% if iis_slider_active == true %}
 <link rel="stylesheet" href="{{ "/assets/css/slider/ideal-image-slider.css" | relative_url }}">
 <link rel="stylesheet" href="{{ "/assets/css/slider/themes/default.css" | relative_url }}">
+<!-- don't copy the following line, applies only to jekyll minima theme -->
+<style type="text/css">.ideal-image-slider{margin-bottom:15px}</style>
 {% endif %}
