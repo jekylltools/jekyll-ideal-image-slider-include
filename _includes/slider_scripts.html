@@ -1,6 +1,6 @@
 <!-- Jekyll Ideal Image Slider Include -->
 <!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
-<!-- v1.1 -->
+<!-- v1.2 -->
 {% assign iis_slider_array = "" | split: "" %}
 {% for slider in page.image_sliders %}
   {% assign iis_slider_array = iis_slider_array | push: slider | uniq %}
@@ -8,7 +8,7 @@
 {% for slider in layout.image_sliders %}
   {% assign iis_slider_array = iis_slider_array | push: slider | uniq %}
 {% endfor %}
-{% if iis_slider_array %}
+{% if iis_slider_array != empty %}
   <script src="{{ "/assets/js/slider/ideal-image-slider.min.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/slider/iis-captions.js" | relative_url }}"></script>
   <script>

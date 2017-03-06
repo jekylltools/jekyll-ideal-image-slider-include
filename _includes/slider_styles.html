@@ -1,10 +1,7 @@
 <!-- Jekyll Ideal Image Slider Include -->
 <!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
-<!-- v1.1 -->
-{% if page.image_sliders and page.image_sliders != empty %}
-  {% assign iis_slider_active = true %}
-{% endif %}
-{% if layout.image_sliders and layout.image_sliders != empty %}
+<!-- v1.2 -->
+{% if page.image_sliders or layout.image_sliders %}
   {% assign iis_slider_active = true %}
 {% endif %}
 {% if iis_slider_active == true %}
