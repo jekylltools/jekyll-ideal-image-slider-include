@@ -4,9 +4,9 @@ GEM
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
     colorator (1.1.0)
-    ffi (1.9.18)
+    ffi (1.9.18-x64-mingw32)
     forwardable-extended (2.6.0)
-    jekyll (3.4.1)
+    jekyll (3.4.3)
       addressable (~> 2.4)
       colorator (~> 1.0)
       jekyll-sass-converter (~> 1.0)
@@ -40,18 +40,23 @@ GEM
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.4.23)
+    thread_safe (0.3.6)
+    tzinfo (1.2.3)
+      thread_safe (~> 0.1)
+    tzinfo-data (1.2017.2)
+      tzinfo (>= 1.0.0)
 
 PLATFORMS
-  ruby
+  x64-mingw32
 
 DEPENDENCIES
-  jekyll (= 3.4.1)
+  jekyll (= 3.4.3)
   jekyll-feed (~> 0.6)
   minima (~> 2.0)
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.2.6p396
 
 BUNDLED WITH
    1.14.6
