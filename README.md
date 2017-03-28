@@ -14,11 +14,11 @@ View a [live demo running on Github Pages](https://jekylltools.github.io/jekyll-
 
 4. Include [`slider_styles.html`](https://github.com/jekylltools/jekyll-ideal-image-slider-include/blob/master/_includes/slider_styles.html) in your theme head. Change the paths in this file to the location of the styles in your site.
 
-  `{% include slider_styles.html %}`
+    `{% include slider_styles.html %}`
 
 5. Include [`slider_scripts.html`](https://github.com/jekylltools/jekyll-ideal-image-slider-include/blob/master/_includes/slider_scripts.html) in your theme just before the `</body>` tag. Change the paths in this file to the location of the scripts in your site.
 
-  `{% include slider_scripts.html %}`
+    `{% include slider_scripts.html %}`
 
 ## Usage
 
