@@ -85,6 +85,10 @@ Include `slider.html` where you want the slider to appear within the page or lay
 {% include slider.html selector="example_slider" %}
 ```
 
+## Sliders on index and archive pages
+
+Set `image_sliders_load_all: true` in the front matter of an index page or archive page to load sliders in post content displayed on that page. For example if you are displaying post excerpts on your home page, set `image_sliders_load_all: true` and any image sliders appearing within post excerpts will load correctly on your home page.
+
 ## Support
 
 [Open an issue](https://github.com/jekylltools/jekyll-ideal-image-slider-include/issues) if you have any problems, questions or suggestions for improvement.
