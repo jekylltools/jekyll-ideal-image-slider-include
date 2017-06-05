@@ -1,4 +1,5 @@
 - selector: slider1
+  bullets: false
   captions: true
   images:
     - src: /img/1.jpg
@@ -24,6 +25,7 @@
     nextNavSelector:
 
 - selector: slider2
+  bullets: true
   captions: true
   images:
     - src: /img/1.jpg
