@@ -26,10 +26,11 @@ Create a slider by adding data to `_data/sliders.yml`, adding a selector to the 
 
 ### 1. Create slider data
 
-Create a slider by adding data to `_data/sliders.yml`. The format for slider data is shown below. See the [Ideal Image Slider settings](https://github.com/Codeinwp/Ideal-Image-Slider-JS#settings) for a description of each setting. Note that `captions` is boolean (`true/false`) and `classes` is unsupported.
+Create a slider by adding data to `_data/sliders.yml`. The format for slider data is shown below. See the [Ideal Image Slider settings](https://github.com/Codeinwp/Ideal-Image-Slider-JS#settings) for a description of each setting. Note that `bullets` and `captions` are boolean (`true/false`) and `classes` is unsupported.
 
 ```
 - selector:
+  bullets:
   captions:
   images:
     - data-src:
