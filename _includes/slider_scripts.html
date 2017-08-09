@@ -1,66 +1,66 @@
 <!-- Jekyll Ideal Image Slider Include -->
 <!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
-<!-- v1.6 -->
-{% assign iis_slider_array = "" | split: "" %}
-{% for selector in page.image_sliders %}
-  {% assign iis_slider_array = iis_slider_array | push: selector | uniq %}
-{% endfor %}
-{% for selector in layout.image_sliders %}
-  {% assign iis_slider_array = iis_slider_array | push: selector | uniq %}
-{% endfor %}
-{% if page.image_sliders_load_all == true %}
-  {% for slider in site.data.sliders %}
-    {% assign iis_slider_array = iis_slider_array | push: slider.selector | uniq %}
-  {% endfor %}
-{% endif %}
+<!-- v1.7 -->
+{%- assign iis_slider_array = "" | split: "" -%}
+{%- for selector in page.image_sliders -%}
+  {%- assign iis_slider_array = iis_slider_array | push: selector | uniq -%}
+{%- endfor -%}
+{%- for selector in layout.image_sliders -%}
+  {%- assign iis_slider_array = iis_slider_array | push: selector | uniq -%}
+{%- endfor -%}
+{%- if page.image_sliders_load_all == true -%}
+  {%- for slider in site.data.sliders -%}
+    {%- assign iis_slider_array = iis_slider_array | push: slider.selector | uniq -%}
+  {%- endfor -%}
+{%- endif -%}
 {% if iis_slider_array != empty %}
   <script src="{{ "/assets/js/slider/ideal-image-slider.min.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/slider/iis-bullet-nav.js" | relative_url }}"></script>
   <script src="{{ "/assets/js/slider/iis-captions.js" | relative_url }}"></script>
   <script>
-  {% for selector in iis_slider_array %}
-    {% assign slider = site.data.sliders | where:"selector",selector | first %}
-    {% assign settings = slider.settings %}
+  {% for selector in iis_slider_array -%}
+    {%- assign slider = site.data.sliders | where:"selector",selector | first -%}
+    {%- assign settings = slider.settings -%}
     var {{ slider.selector }} = new IdealImageSlider.Slider({
       selector: '#{{ slider.selector }}',
-      {% if settings.height %}
+      {% if settings.height -%}
       height: {{ settings.height }},
-      {% endif %}
-      {% if settings.initialHeight %}
+      {% endif -%}
+      {% if settings.initialHeight -%}
       initialHeight: {{ settings.initialHeight }},
-      {% endif %}
-      {% if settings.maxHeight %}
+      {% endif -%}
+      {% if settings.maxHeight -%}
       maxHeight: {{ settings.maxHeight }},
-      {% endif %}
-      {% if settings.interval %}
+      {% endif -%}
+      {% if settings.interval -%}
       interval: {{ settings.interval }},
-      {% endif %}
-      {% if settings.transitionDuration %}
+      {% endif -%}
+      {% if settings.transitionDuration -%}
       transitionDuration: {{ settings.transitionDuration }},
-      {% endif %}
-      {% if settings.effect %}
+      {% endif -%}
+      {% if settings.effect -%}
       effect: {{ settings.effect }},
-      {% endif %}
-      {% if settings.disableNav %}
+      {% endif -%}
+      {% if settings.disableNav -%}
       disableNav: {{ settings.disableNav }},
-      {% endif %}
-      {% if settings.keyboardNav %}
+      {% endif -%}
+      {% if settings.keyboardNav -%}
       keyboardNav: {{ settings.keyboardNav }},
-      {% endif %}
-      {% if settings.previousNavSelector %}
+      {% endif -%}
+      {% if settings.previousNavSelector -%}
       previousNavSelector: {{ settings.previousNavSelector }},
-      {% endif %}
-      {% if settings.nextNavSelector %}
+      {% endif -%}
+      {% if settings.nextNavSelector -%}
       nextNavSelector: {{ settings.nextNavSelector }},
-      {% endif %}
+      {% endif -%}
     });
-    {% if slider.bullets == true %}
+    {% if slider.bullets == true -%}
     {{ slider.selector }}.addBulletNav();
-    {% endif %}
-    {% if slider.captions == true %}
+    {% endif -%}
+    {% if slider.captions == true -%}
     {{ slider.selector }}.addCaptions();
-    {% endif %}
+    {% endif -%}
     {{ slider.selector }}.start();
-  {% endfor %}
+  {% endfor -%}
   </script>
-{% endif %}
+{%- endif -%}
