@@ -1,6 +1,6 @@
 <!-- Jekyll Ideal Image Slider Include -->
 <!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
-<!-- v1.5 -->
+<!-- v1.6 -->
 {% assign iis_slider_array = "" | split: "" %}
 {% for selector in page.image_sliders %}
   {% assign iis_slider_array = iis_slider_array | push: selector | uniq %}
@@ -21,7 +21,7 @@
   {% for selector in iis_slider_array %}
     {% assign slider = site.data.sliders | where:"selector",selector | first %}
     {% assign settings = slider.settings %}
-    var slider = new IdealImageSlider.Slider({
+    var {{ slider.selector }} = new IdealImageSlider.Slider({
       selector: '#{{ slider.selector }}',
       {% if settings.height %}
       height: {{ settings.height }},
@@ -55,12 +55,12 @@
       {% endif %}
     });
     {% if slider.bullets == true %}
-    slider.addBulletNav();
+    {{ slider.selector }}.addBulletNav();
     {% endif %}
     {% if slider.captions == true %}
-    slider.addCaptions();
+    {{ slider.selector }}.addCaptions();
     {% endif %}
-    slider.start();
+    {{ slider.selector }}.start();
   {% endfor %}
   </script>
 {% endif %}
