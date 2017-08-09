@@ -1,17 +1,12 @@
 <!-- Jekyll Ideal Image Slider Include -->
 <!-- https://github.com/jekylltools/jekyll-ideal-image-slider-include -->
-<!-- v1.7 -->
-{%- assign iis_slider_array = "" | split: "" -%}
-{%- for selector in page.image_sliders -%}
-  {%- assign iis_slider_array = iis_slider_array | push: selector | uniq -%}
-{%- endfor -%}
-{%- for selector in layout.image_sliders -%}
-  {%- assign iis_slider_array = iis_slider_array | push: selector | uniq -%}
-{%- endfor -%}
+<!-- v1.8 -->
+{%- assign page_sliders = page.image_sliders | uniq -%}
+{%- assign layout_sliders = layout.image_sliders | uniq -%}
+{%- assign iis_slider_array = page_sliders | concat: layout_sliders | uniq -%}
 {%- if page.image_sliders_load_all == true -%}
-  {%- for slider in site.data.sliders -%}
-    {%- assign iis_slider_array = iis_slider_array | push: slider.selector | uniq -%}
-  {%- endfor -%}
+  {%- assign site_sliders = site.data.sliders | uniq -%}
+  {%- assign iis_slider_array = iis_slider_array | concat: site_sliders | uniq -%}
 {%- endif -%}
 {% if iis_slider_array != empty %}
   <script src="{{ "/assets/js/slider/ideal-image-slider.min.js" | relative_url }}"></script>
