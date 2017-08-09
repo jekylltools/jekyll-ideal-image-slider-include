@@ -5,7 +5,7 @@ baseurl: "/jekyll-ideal-image-slider-include"
 # Build settings
 markdown: kramdown
 theme: minima
-gems:
+plugins:
   - jekyll-feed
 exclude:
   - Gemfile
